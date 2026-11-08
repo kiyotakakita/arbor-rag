@@ -1,0 +1,85 @@
+{
+  "id": "dataset_books_ochiai",
+  "title": "書籍・学術：落合陽一著作コレクション",
+  "description": "落合陽一による計算機自然、デジタルネイチャー、魔法の世紀などのメディア論・現代思想書籍群",
+  "children": [
+    {
+      "id": "sub_media_thought",
+      "title": "メディア論・デジタル思想・計算機自然",
+      "description": "デジタルネイチャー、計算機自然、情報社会論、脱人間中心主義、テクノロジーと東洋思想の融合",
+      "metadata": {
+        "author": "落合陽一",
+        "domain": "メディア論・思想"
+      },
+      "children": [
+        {
+          "id": "book_digital_nature",
+          "title": "デジタルネイチャー (Digital Nature)",
+          "description": "落合陽一著。計算機によって再構築される新しい自然観と脱人間中心主義。人と機械が融合し物質と情報が不可分になる超AI時代のビジョン。",
+          "metadata": {
+            "author": "落合陽一",
+            "year": 2018,
+            "tags": ["思想", "AI", "メディアアート", "計算機自然"],
+            "keywords": ["落合陽一", "デジタルネイチャー", "計算機自然", "質量", "脱人間中心主義"]
+          },
+          "children": [
+            {
+              "id": "detail_digital_nature_core",
+              "title": "デジタルネイチャー：詳細あらすじ・核心論点",
+              "description": "計算機と自然が融合した『計算機自然』において、人間中心主義から脱却し、質量を持つ自然とデジタル情報が一体化した生態系を提示する2018年の代表的著作。",
+              "metadata": {
+                "author": "落合陽一",
+                "year": 2018,
+                "keywords": ["落合陽一", "デジタルネイチャー", "計算機自然"]
+              }
+            }
+          ]
+        },
+        {
+          "id": "book_century_of_magic",
+          "title": "魔法の世紀 (The Century of Magic)",
+          "description": "落合陽一著。ユビキタスコンピューティングの先にある『魔法のようなテクノロジー』と映像から空間へのパラダイムシフト。",
+          "metadata": {
+            "author": "落合陽一",
+            "year": 2015,
+            "tags": ["ユビキタス", "空間メディア", "落合陽一"],
+            "keywords": ["魔法の世紀", "落合陽一", "空間"]
+          },
+          "children": [
+            {
+              "id": "detail_century_of_magic_core",
+              "title": "魔法の世紀：詳細あらすじ・核心論点",
+              "description": "コンピュータが環境に溶け込み、人間にとって魔法のように振る舞う世界の到来を予見した2015年の記念碑的論考。",
+              "metadata": {
+                "author": "落合陽一",
+                "year": 2015
+              }
+            }
+          ]
+        },
+        {
+          "id": "book_beyond_digital_nature",
+          "title": "波状言論21 ビヨンド・デジタル・ネイチャー",
+          "description": "落合陽一著。デジタルネイチャー以後の東洋思想・身体性・近代の超克を論じた深化版考究。",
+          "metadata": {
+            "author": "落合陽一",
+            "year": 2019,
+            "tags": ["東洋思想", "身体性", "落合陽一"],
+            "keywords": ["落合陽一", "ビヨンド", "東洋思想"]
+          },
+          "children": [
+            {
+              "id": "detail_beyond_dn_core",
+              "title": "ビヨンド・デジタル・ネイチャー：詳細論点",
+              "description": "計算機自然の先にある日本的自然観と仏教・民俗学的アプローチを取り入れたテクノロジー論。",
+              "metadata": {
+                "author": "落合陽一",
+                "year": 2019
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

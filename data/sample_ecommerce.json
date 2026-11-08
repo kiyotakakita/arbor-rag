@@ -1,0 +1,35 @@
+{
+  "id": "dataset_ecommerce",
+  "title": "EC商品・スマート家電＆ガジェット",
+  "description": "スマートホーム、ノイズキャンセリングオーディオ、高機能スマートウォッチ等の電子機器カタログ",
+  "children": [
+    {
+      "id": "sub_audio_gadget",
+      "title": "ポータブルオーディオ・音響機器",
+      "description": "ハイレゾ対応ワイヤレスイヤホン、空間オーディオヘッドホン、高音質スピーカー",
+      "children": [
+        {
+          "id": "item_wh1000xm5",
+          "title": "Sony WH-1000XM5 ノイズキャンセリングヘッドホン",
+          "description": "業界最高峰のノイズキャンセリング性能と8マイクシステム、AI技術によるクリアな通話品質を誇るフラッグシップワイヤレスヘッドホン。",
+          "metadata": {
+            "brand": "Sony",
+            "price_jpy": 49500,
+            "category": "ヘッドホン",
+            "keywords": ["ソニー", "ノイズキャンセリング", "WH-1000XM5", "ハイレゾ", "ワイヤレス"]
+          },
+          "children": [
+            {
+              "id": "detail_wh1000xm5_specs",
+              "title": "WH-1000XM5：製品仕様・音質特長",
+              "description": "専用開発30mmドライバーユニットと炭素繊維複合材料ドーム採用。最大30時間バッテリー持続、マルチポイント接続対応。",
+              "metadata": {
+                "battery_hours": 30
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

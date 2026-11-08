@@ -1,0 +1,399 @@
+{
+  "id": "root_catalog",
+  "title": "Movie Catalog Knowledge Base",
+  "description": "映画作品の体系的階層カタログ（ジャンル ➔ 監督・特徴 ➔ 作品 ➔ 詳細・あらすじ）",
+  "level": 0,
+  "metadata": {
+    "total_categories": 3,
+    "version": "1.0.0"
+  },
+  "children": [
+    {
+      "id": "cat_sci_fi",
+      "title": "SF・サイエンスフィクション",
+      "description": "宇宙探索、時間操作、人工知能、サイバーパンク、哲学的コンタクトを扱うSF映画群",
+      "level": 1,
+      "metadata": {
+        "keywords": ["SF", "Sci-Fi", "時間", "宇宙", "近未来", "AI", "物理学"]
+      },
+      "children": [
+        {
+          "id": "sub_nolan_scifi",
+          "title": "クリストファー・ノーラン（SF・時間軸構造）",
+          "description": "Christopher Nolan監督による時間構造の変容、相対性理論、多重現実をテーマにした重厚なハードSF作品群",
+          "level": 2,
+          "metadata": {
+            "director": "Christopher Nolan",
+            "director_ja": "クリストファー・ノーラン",
+            "style": "ノンリニア時間軸、重力物理、パズル構造"
+          },
+          "children": [
+            {
+              "id": "item_inception",
+              "title": "インセプション (Inception)",
+              "description": "他人の夢の中に潜入しアイデアを植え付ける産業スパイの闘いを描く多重階層SFアクション",
+              "level": 3,
+              "metadata": {
+                "year": 2010,
+                "director": "Christopher Nolan",
+                "cast": ["レオナルド・ディカプリオ", "渡辺謙", "ジョセフ・ゴードン＝レヴィット"],
+                "runtime_min": 148
+              },
+              "children": [
+                {
+                  "id": "detail_inception_synopsis",
+                  "title": "インセプション：詳細あらすじと核心テーマ",
+                  "description": "ドム・コブは標的の無意識から秘密を盗み出すスペシャリスト。最後の任務として、巨大企業の御曹司の潜在意識深くに『会社解体』のアイデアを植え付けるインセプションに挑む。夢の第1階層から第3階層、そして虚無（リンボ）へと潜るにつれ時間の進み方が指数関数的に変化する極限状況で、妻モルの幻影と向き合う。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["夢", "潜入", "トーテム", "多重構造", "虚無", "トーテムの回転"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_interstellar",
+              "title": "インターステラー (Interstellar)",
+              "description": "滅びゆく地球から人類を救うため、ワームホールを越えて新たな居住可能惑星を探す宇宙探査映画",
+              "level": 3,
+              "metadata": {
+                "year": 2014,
+                "director": "Christopher Nolan",
+                "cast": ["マシュー・マコノヒー", "アン・ハサウェイ", "ジェシカ・チャステイン"],
+                "runtime_min": 169
+              },
+              "children": [
+                {
+                  "id": "detail_interstellar_synopsis",
+                  "title": "インターステラー：詳細あらすじと核心テーマ",
+                  "description": "異常気象と食糧危機で滅亡の危機に瀕した近未来の地球。元宇宙飛行士クーパーは娘マーフを残し、土星近傍に突如現れたワームホールを通り別銀河の探査へ出発する。巨大ブラックホール『ガルガンチュア』周辺での重力によるウラシマ効果、時間の不可逆性と親子の絆、5次元空間テサラクトからのメッセージを描いた感動作。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["ブラックホール", "相対性理論", "ガルガンチュア", "愛", "ワームホール", "次元"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_tenet",
+              "title": "TENET テネット (Tenet)",
+              "description": "未来から送られてくる『時間の逆行』兵器による第三次世界大戦の危機を阻止するタイムサスペンス",
+              "level": 3,
+              "metadata": {
+                "year": 2020,
+                "director": "Christopher Nolan",
+                "cast": ["ジョン・デイビッド・ワシントン", "ロバート・パティンソン", "エリザベス・デビッキ"],
+                "runtime_min": 150
+              },
+              "children": [
+                {
+                  "id": "detail_tenet_synopsis",
+                  "title": "TENET テネット：詳細あらすじと核心テーマ",
+                  "description": "満席のオペラ劇場でテロ事件に巻き込まれた名もなき男は、未来からのエントロピー減少物質による時間逆行技術を突き止める。順行する部隊と逆行する部隊が同時に戦う『時間挟み撃ち作戦（ピサー）』を通じて、全人類を巻き込む世界の黄昏を防ぐ。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["時間逆行", "エントロピー", "挟み撃ち", "テネット", "回文"]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sub_villeneuve_scifi",
+          "title": "ドゥニ・ヴィルヌーヴ（哲学的SF・コンタクト）",
+          "description": "Denis Villeneuve監督による言語、認知、存在論的孤独を圧倒的な映像美で描くSF映画",
+          "level": 2,
+          "metadata": {
+            "director": "Denis Villeneuve",
+            "director_ja": "ドゥニ・ヴィルヌーヴ",
+            "style": "重厚なミニマリズム、言語学、記憶とアイデンティティ"
+          },
+          "children": [
+            {
+              "id": "item_arrival",
+              "title": "メッセージ (Arrival)",
+              "description": "地球に突如飛来した巨大宇宙船の地球外生命体と意思疎通を図る女性言語学者の物語",
+              "level": 3,
+              "metadata": {
+                "year": 2016,
+                "director": "Denis Villeneuve",
+                "cast": ["エイミー・アダムス", "ジェレミー・レナー", "フォレスト・ウィテカー"],
+                "runtime_min": 116
+              },
+              "children": [
+                {
+                  "id": "detail_arrival_synopsis",
+                  "title": "メッセージ：詳細あらすじと核心テーマ",
+                  "description": "突如世界各地に現れた12隻の殻のような飛行物体。言語学者ルイーズ・バンクスは物理学者イアンと共に『ヘプタポッド』と呼ばれる7本肢の異星人との交信を試みる。彼らの円形表意文字を解読するうちに、サピア＝ウォーフの仮説通り彼女の思考と時間知覚が直線から非線形（過去・現在・未来の同時把握）へと変容していく。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["地球外生命体", "ヘプタポッド", "表意文字", "非線形時間", "サピア＝ウォーフ"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_bladerunner2049",
+              "title": "ブレードランナー 2049 (Blade Runner 2049)",
+              "description": "旧型レプリカントを狩る捜査官Kが、社会の根幹を揺るがす秘密を発見するサイバーパンクの金字塔続編",
+              "level": 3,
+              "metadata": {
+                "year": 2017,
+                "director": "Denis Villeneuve",
+                "cast": ["ライアン・ゴズリング", "ハリソン・フォード", "アナ・デ・アルマス"],
+                "runtime_min": 164
+              },
+              "children": [
+                {
+                  "id": "detail_bladerunner_synopsis",
+                  "title": "ブレードランナー 2049：詳細あらすじと核心テーマ",
+                  "description": "2049年のロサンゼルス。新型レプリカントのKはブレードランナーとして旧型を処刑する任務中、埋葬された女性レプリカントの骨から出産痕を発見する。もし人造人間が生殖可能となれば人間と奴隷の境界が崩壊する。過去の記憶と自己の魂を巡り、30年間失踪していたデッカードを探す旅路へ出る。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["レプリカント", "人造人間", "記憶", "サイバーパンク", "魂", "ジョイ"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat_suspense",
+      "title": "サスペンス・ミステリー・クライム",
+      "description": "謎解き、心理的駆け引き、記憶の倒錯、予期せぬどんでん返しを描くサスペンス映画群",
+      "level": 1,
+      "metadata": {
+        "keywords": ["サスペンス", "スリラー", "ミステリー", "どんでん返し", "記憶", "心理戦"]
+      },
+      "children": [
+        {
+          "id": "sub_nolan_suspense",
+          "title": "クリストファー・ノーラン（初期サスペンス・記憶と偽り）",
+          "description": "Christopher Nolan監督の初期キャリアを代表する、逆時系列や心理トリックを駆使したクライム・サスペンス",
+          "level": 2,
+          "metadata": {
+            "director": "Christopher Nolan",
+            "director_ja": "クリストファー・ノーラン",
+            "style": "記憶喪失、逆行構成、オブセッション"
+          },
+          "children": [
+            {
+              "id": "item_memento",
+              "title": "メメント (Memento)",
+              "description": "記憶が10分しか保てない男が妻の殺害犯を追う、全編を逆時系列とカラー/白黒で紡ぐ緊迫のサスペンス",
+              "level": 3,
+              "metadata": {
+                "year": 2000,
+                "director": "Christopher Nolan",
+                "cast": ["ガイ・ピアース", "キャリー＝アン・モス", "ジョー・パントリアーノ"],
+                "runtime_min": 113
+              },
+              "children": [
+                {
+                  "id": "detail_memento_synopsis",
+                  "title": "メメント：詳細あらすじと核心テーマ",
+                  "description": "元保険調査員のレナード・シェルビーは、強盗に妻を殺害されたショックで10分間しか新しい記憶を維持できない前向性健忘症を患っている。彼は復讐を果たすため、重要な事実を自分の身体にタトゥー（刺青）として刻み、ポラロイドカメラで写真を撮りメモを残しながら犯人『ジョン・G』を追う。映画は時系列の逆順（カラー映像）と順方向（白黒映像）が交差し、衝撃的なラストシーンへと収束するノーラン監督の2000年の出世作。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["2000年", "ノーラン", "前向性健忘", "ポラロイド", "タトゥー", "逆時系列", "ジョンG"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_prestige",
+              "title": "プレステージ (The Prestige)",
+              "description": "19世紀末ロンドン、互いの瞬間移動マジックの秘密を暴こうと狂気のライバル闘争を繰り広げる二人の奇術師",
+              "level": 3,
+              "metadata": {
+                "year": 2006,
+                "director": "Christopher Nolan",
+                "cast": ["ヒュー・ジャックマン", "クリスチャン・ベール", "スカーレット・ヨハンソン", "デヴィッド・ボウイ"],
+                "runtime_min": 130
+              },
+              "children": [
+                {
+                  "id": "detail_prestige_synopsis",
+                  "title": "プレステージ：詳細あらすじと核心テーマ",
+                  "description": "ロバート・アンジャーとアルフレッド・ボーデンはかつて助手を務めた親友だったが、ステージ上の水槽脱出事故を機に宿敵となる。ボーデンが考案した完璧な『瞬間移動』奇術に嫉妬したアンジャーは、天才科学者ニコラ・テスラに機械の製造を依頼。騙し合いと執念の代償として払われた恐るべき秘密が明かされる。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["奇術師", "瞬間移動", "ニコラ・テスラ", "ライバル", "代償", "トリック"]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sub_fincher_thriller",
+          "title": "デヴィッド・フィンチャー（サイコスリラー・暗黒の人間心理）",
+          "description": "David Fincher監督による緻密な構図、猟奇的心理捜査、冷徹なトーンで描くマスターピーススリラー",
+          "level": 2,
+          "metadata": {
+            "director": "David Fincher",
+            "director_ja": "デヴィッド・フィンチャー",
+            "style": "スタイリッシュ、七つの大罪、心理崩壊、完璧主義"
+          },
+          "children": [
+            {
+              "id": "item_seven",
+              "title": "セブン (Seven)",
+              "description": "キリスト教の『七つの大罪』を模倣した連続猟奇殺人犯と、追跡する2人の刑事の息詰まる攻防",
+              "level": 3,
+              "metadata": {
+                "year": 1995,
+                "director": "David Fincher",
+                "cast": ["ブラッド・ピット", "モーガン・フリーマン", "ケヴィン・スペイシー"],
+                "runtime_min": 127
+              },
+              "children": [
+                {
+                  "id": "detail_seven_synopsis",
+                  "title": "セブン：詳細あらすじと核心テーマ",
+                  "description": "引退を間近に控えたベテラン刑事サマセットと血気盛んな若手刑事ミルズ。豪雨の降り続く退廃的な街で、『暴食』『強欲』『怠惰』『肉欲』『高慢』を見立てたおぞましい連続殺人が発生する。犯人ジョン・ドゥは自ら警察に出頭し、残る二つの罪『嫉妬』と『憤怒』を完結させるため、砂漠の送電塔下へと二人を誘導する。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["七つの大罪", "箱", "ジョン・ドゥ", "猟奇殺人", "雨", "サスペンス"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_fight_club",
+              "title": "ファイト・クラブ (Fight Club)",
+              "description": "空虚な消費社会に疲弊した男と謎の石鹸商人タイラーが結成する秘密の素手格闘クラブと社会転覆",
+              "level": 3,
+              "metadata": {
+                "year": 1999,
+                "director": "David Fincher",
+                "cast": ["エドワード・ノートン", "ブラッド・ピット", "ヘレナ・ボナム＝カーター"],
+                "runtime_min": 139
+              },
+              "children": [
+                {
+                  "id": "detail_fightclub_synopsis",
+                  "title": "ファイト・クラブ：詳細あらすじと核心テーマ",
+                  "description": "自動車会社でリコール調査員を務める僕（語り手）は不眠症に悩まされていた。航空機内で出会ったタイラー・ダーデンと意気投合し、殴り合うことで生きている実感を共有する『ファイト・クラブ』を設立。やがてクラブは反資本主義テロ組織『プロジェクト・メイヘム』へと暴走し、衝撃の同一人物事実が判明する。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["不眠症", "タイラー・ダーデン", "地下格闘", "破壊工作", "二重人格"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat_anime_art",
+      "title": "アニメーション・ファンタジー・精神世界",
+      "description": "夢と現実の境界消失、神秘的な世界観、人間のアイデンティティを描く日本のアニメーション傑作群",
+      "level": 1,
+      "metadata": {
+        "keywords": ["アニメ", "心理", "夢", "現実の境界", "スタジオジブリ", "日本映画"]
+      },
+      "children": [
+        {
+          "id": "sub_kon_psycho",
+          "title": "今敏（虚構と現実の越境・心理サスペンス）",
+          "description": "Satoshi Kon監督によるアニメーションならではのカット割りで夢・妄想・映画・現実を滑らかに縫い合わせる奇跡の作品群",
+          "level": 2,
+          "metadata": {
+            "director": "Satoshi Kon",
+            "director_ja": "今敏",
+            "style": "マッチカット、精神分裂、メタフィクション"
+          },
+          "children": [
+            {
+              "id": "item_perfect_blue",
+              "title": "パーフェクトブルー (Perfect Blue)",
+              "description": "アイドルから女優へ転身した女性が過激な役柄とストーカー、そしてもう一人の自分に精神を蝕まれていく",
+              "level": 3,
+              "metadata": {
+                "year": 1997,
+                "director": "Satoshi Kon",
+                "cast": ["岩男潤子", "松本梨香", "辻親八"],
+                "runtime_min": 81
+              },
+              "children": [
+                {
+                  "id": "detail_perfect_blue_synopsis",
+                  "title": "パーフェクトブルー：詳細あらすじと核心テーマ",
+                  "description": "アイドルグループ『チャム』を脱退し女優の道を歩み始めた霧越未麻。インターネット上の日記『未麻の部屋』には本人の知らない私生活が詳細に書き込まれ、関係者が次々と襲撃される。ドラマ撮影中の自分、ストーカーの内田、幻影として現れるアイドル未麻。三者の境界が曖昧になり彼女の正気は臨界点に達する。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["アイドル", "ストーカー", "未麻の部屋", "サイコホラー", "虚実の境界"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "item_paprika",
+              "title": "パプリカ (Paprika)",
+              "description": "他人の夢を共有・治療できる医療機器が盗まれ、現実の世界が狂乱の悪夢へと侵食されていくSFファンタジー",
+              "level": 3,
+              "metadata": {
+                "year": 2006,
+                "director": "Satoshi Kon",
+                "cast": ["林原めぐみ", "江守徹", "堀勝之祐"],
+                "runtime_min": 90
+              },
+              "children": [
+                {
+                  "id": "detail_paprika_synopsis",
+                  "title": "パプリカ：詳細あらすじと核心テーマ",
+                  "description": "精神医療研究所で開発されたセラピー機器『DCミニ』が何者かに強奪される。セラピストの千葉敦子は、夢の世界で奔放に生きるもう一つの姿『夢探偵パプリカ』として潜入捜査を開始。巨大な人形や家電製品が行進する悪夢のパレードが現実の東京を飲み込み始める中、無意識の根源で黒幕と対決する。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["DCミニ", "夢探偵", "パレード", "平沢進", "無意識", "夢と現実"]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sub_miyazaki_myth",
+          "title": "宮崎駿（自然・神話・成長ファンタジー）",
+          "description": "Hayao Miyazaki監督による豊かな生命観、異世界探求、人間の生きる力を描いた国民的アニメーション",
+          "level": 2,
+          "metadata": {
+            "director": "Hayao Miyazaki",
+            "director_ja": "宮崎駿",
+            "style": "手描きアニメーション、八百万の神、生命への畏敬"
+          },
+          "children": [
+            {
+              "id": "item_spirited_away",
+              "title": "千と千尋の神隠し (Spirited Away)",
+              "description": "神々が集う不思議な湯屋に迷い込んだ10歳の少女が、生きる力を取り戻していく冒険ファンタジー",
+              "level": 3,
+              "metadata": {
+                "year": 2001,
+                "director": "Hayao Miyazaki",
+                "cast": ["柊瑠美", "入野自由", "夏木マリ"],
+                "runtime_min": 125
+              },
+              "children": [
+                {
+                  "id": "detail_spirited_away_synopsis",
+                  "title": "千と千尋の神隠し：詳細あらすじと核心テーマ",
+                  "description": "引っ越し途中にトンネルを抜け、八百万の神々が疲れを癒す油屋に迷い込んだ少女千尋。豚にされてしまった両親を救うため、魔女湯婆婆と契約し名前を『千』に奪われながらも懸命に働き始める。謎の少年ハクやカオナシとの交流を通じて、自分の本名と大切な記憶を取り戻す。",
+                  "level": 4,
+                  "metadata": {
+                    "keywords": ["油屋", "湯婆婆", "ハク", "カオナシ", "名前", "神隠し", "2001年"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

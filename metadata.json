@@ -1,0 +1,6 @@
+{
+  "name": "DecisionRAG Engine & Boilerplate",
+  "description": "A reusable hierarchical search & recommendation engine template with single-forward-pass decision models, tree pruning, dense hybrid rescue, and listwise reranking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
