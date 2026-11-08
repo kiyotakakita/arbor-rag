@@ -213,7 +213,7 @@ class LLMDecisionModel(BaseDecisionModel):
     requesting the model to return a structured JSON table of float scores in ONE forward pass.
     """
 
-    def __init__(self, api_key: str | None = None, model_name: str = "gemini-2.5-flash"):
+    def __init__(self, api_key: str | None = None, model_name: str = "gemini-3.8-flash"):
         self.api_key = api_key
         self.model_name = model_name
         self._fallback = MockDecisionModel()
