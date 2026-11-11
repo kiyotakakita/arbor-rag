@@ -1,0 +1,52 @@
+{
+  "id": "grafted_3442459167221996002_1794154668",
+  "title": "専門知識カタログ：富野由悠季",
+  "description": "クエリ『富野由悠季』から自律生成された体系的階層知識群",
+  "level": 1,
+  "metadata": {},
+  "enabled": true,
+  "dataset_id": "grafted_3442459167221996002_1794154668",
+  "children": [
+    {
+      "id": "grafted_3442459167221996002_1794154668_sub",
+      "title": "富野由悠季 関連領域",
+      "description": "富野由悠季に関する主要概念、重要トピック、関連文献・製品群",
+      "level": 2,
+      "metadata": {},
+      "enabled": true,
+      "dataset_id": "grafted_3442459167221996002_1794154668",
+      "children": [
+        {
+          "id": "grafted_3442459167221996002_1794154668_item_main",
+          "title": "富野由悠季 代表作・標準仕様",
+          "description": "クエリ『富野由悠季』のユーザー意図に高精度に適合するよう自律生成されたコアアイテム。",
+          "level": 3,
+          "metadata": {
+            "keywords": [
+              "富野由悠季",
+              "富野由悠季"
+            ],
+            "tags": [
+              "自律生成",
+              "知識拡張"
+            ]
+          },
+          "enabled": true,
+          "dataset_id": "grafted_3442459167221996002_1794154668",
+          "children": [
+            {
+              "id": "grafted_3442459167221996002_1794154668_item_main_detail",
+              "title": "富野由悠季：詳細解説と応用",
+              "description": "富野由悠季に関する詳細解説。ユーザーが求めた文脈（富野由悠季）の核心部分を網羅。",
+              "level": 4,
+              "metadata": {},
+              "enabled": true,
+              "dataset_id": "grafted_3442459167221996002_1794154668",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

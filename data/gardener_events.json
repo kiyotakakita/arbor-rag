@@ -1,0 +1,36 @@
+[
+  {
+    "event_id": "gap_evt_745efe10",
+    "timestamp": "2026-11-08T16:17:48.948703",
+    "query": "富野由悠季",
+    "top_score_before": 0.05,
+    "top_title_before": "インセプション (Inception)",
+    "gap_detected": true,
+    "missing_concept": "富野由悠季",
+    "grafted_dataset_id": "grafted_3442459167221996002_1794154668",
+    "grafted_title": "専門知識カタログ：富野由悠季",
+    "grafted_nodes_count": 4,
+    "top_score_after": 0.93,
+    "top_title_after": "富野由悠季 代表作・標準仕様",
+    "accuracy_gain_pct": 88,
+    "status": "completed",
+    "message": "🚨 知識の空白（スコア: 5%）を検知。庭師エージェントが【専門知識カタログ：富野由悠季】（+4ノード）を自動接ぎ木し、適合精度が 93%（+88.0%）へ自律進化しました！"
+  },
+  {
+    "event_id": "gap_evt_0bc511e2",
+    "timestamp": "2026-11-08T16:17:17.480607",
+    "query": "落合陽一のデジタルネイチャーと計算機自然",
+    "top_score_before": 0.408,
+    "top_title_before": "プレステージ (The Prestige)",
+    "gap_detected": true,
+    "missing_concept": "落合陽一（メディア論・現代思想）",
+    "grafted_dataset_id": "grafted_738197717345562747_1794154637",
+    "grafted_title": "書籍・学術：落合陽一著作コレクション",
+    "grafted_nodes_count": 5,
+    "top_score_after": 1,
+    "top_title_after": "デジタルネイチャー (Digital Nature)",
+    "accuracy_gain_pct": 59.2,
+    "status": "completed",
+    "message": "🚨 知識の空白（スコア: 41%）を検知。庭師エージェントが【書籍・学術：落合陽一著作コレクション】（+5ノード）を自動接ぎ木し、適合精度が 100%（+59.2%）へ自律進化しました！"
+  }
+]

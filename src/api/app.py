@@ -127,6 +127,7 @@ def recommend(request: RecommendationRequest) -> RecommendationResponse:
 def search_simple(
     query: str = Query(..., description="Natural language search or recommendation query"),
     top_k: int = Query(5, ge=1, le=20),
+    auto_grow: bool = Query(False, description="Grow the knowledge tree with Gemini on a knowledge gap"),
 ) -> RecommendationResponse:
     """Convenience endpoint for simple keyword/sentence queries with default pruning settings."""
     engine = get_engine()
@@ -138,6 +139,7 @@ def search_simple(
         prune_threshold=settings.prune_threshold,
         enable_dense_hybrid=settings.enable_dense_hybrid,
         dense_top_n=settings.dense_top_n,
+        auto_grow=auto_grow,
     )
     return engine.search(request)
 

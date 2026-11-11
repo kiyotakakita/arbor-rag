@@ -27,6 +27,10 @@ try:
         hybrid_alpha: float = Field(
             default=0.7, description="Tree vs Dense confidence weighting factor (0.0 to 1.0)", ge=0.0, le=1.0
         )
+        auto_grow: bool = Field(
+            default=False,
+            description="Use Gemini to grow the knowledge tree when the best result scores below 0.30",
+        )
 
     class EvaluatedNode(BaseModel):
         """Inspection of a single node evaluated in a forward pass."""
@@ -116,6 +120,7 @@ except ImportError:
         enable_dense_hybrid: bool = True
         dense_top_n: int = 3
         hybrid_alpha: float = 0.7
+        auto_grow: bool = False
 
     @dataclass
     class EvaluatedNode:  # type: ignore[no-redef]

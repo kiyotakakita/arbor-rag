@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import logging
 import sys
 from pathlib import Path
 
@@ -20,6 +21,7 @@ from src.schemas.recommendation import RecommendationRequest
 
 
 def main():
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
     parser = argparse.ArgumentParser(description="DecisionRAG Hierarchical Search & Decision CLI")
     parser.add_argument(
         "--query",
@@ -31,6 +33,12 @@ def main():
     parser.add_argument("--branch_k", type=int, default=2, help="Branch factor Top-K per level")
     parser.add_argument("--prune_thresh", type=float, default=0.2, help="Pruning threshold")
     parser.add_argument("--dense_n", type=int, default=3, help="Dense hybrid candidates count")
+    parser.add_argument(
+        "--auto-grow",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Automatically grow the knowledge tree with Gemini on a knowledge gap",
+    )
     args = parser.parse_args()
 
     catalog_path = Path(__file__).resolve().parent / "data" / "sample_catalog.json"
@@ -42,7 +50,11 @@ def main():
     print("🌲 DecisionRAG Hierarchical Decision & Recommendation Engine")
     print("=" * 70)
     print(f"🔍 Query: \"{args.query}\"")
-    print(f"⚙️  Settings: branch_top_k={args.branch_k}, prune_threshold={args.prune_thresh}, dense_top_n={args.dense_n}")
+    print(
+        f"⚙️  Settings: branch_top_k={args.branch_k}, "
+        f"prune_threshold={args.prune_thresh}, dense_top_n={args.dense_n}, "
+        f"auto_grow={args.auto_grow}"
+    )
     print("-" * 70)
 
     # Initialize Engine
@@ -60,6 +72,7 @@ def main():
         prune_threshold=args.prune_thresh,
         enable_dense_hybrid=True,
         dense_top_n=args.dense_n,
+        auto_grow=args.auto_grow,
     )
 
     response = engine.search(req)

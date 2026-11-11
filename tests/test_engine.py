@@ -3,10 +3,12 @@ from __future__ import annotations
 
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from src.core.decision_model import MockDecisionModel
 from src.core.dense_retriever import DenseRetriever
 from src.core.engine import DecisionEngine
+from src.core.gardener import TreeGardener
 from src.core.tree import TreeIndex
 from src.schemas.recommendation import RecommendationRequest
 
@@ -135,6 +137,55 @@ class TestEngine(unittest.TestCase):
         response_after = self.engine.search(req)
         ids_after = [r.id for r in response_after.results]
         self.assertNotIn("book_digital_nature", ids_after)
+
+    def test_auto_grow_mounts_gemini_branch_and_researches(self):
+        query = "富野由悠季"
+        branch = {
+            "id": "tomino",
+            "title": "富野由悠季のアニメーション作品",
+            "description": "アニメーション監督・富野由悠季の実在作品",
+            "children": [
+                {
+                    "id": "anime",
+                    "title": "テレビアニメ",
+                    "description": "富野由悠季が監督したテレビアニメ",
+                    "children": [
+                        {
+                            "id": "gundam",
+                            "title": "機動戦士ガンダム",
+                            "description": "富野由悠季が総監督を務めたテレビアニメ。",
+                            "metadata": {
+                                "director_ja": "富野由悠季",
+                                "keywords": ["富野由悠季", "機動戦士ガンダム"],
+                            },
+                        },
+                        {
+                            "id": "ideon",
+                            "title": "伝説巨神イデオン",
+                            "description": "富野由悠季が監督したテレビアニメ。",
+                            "metadata": {"director_ja": "富野由悠季"},
+                        },
+                        {
+                            "id": "z_gundam",
+                            "title": "機動戦士Ζガンダム",
+                            "description": "富野由悠季が総監督を務めたテレビアニメ。",
+                            "metadata": {"director_ja": "富野由悠季"},
+                        },
+                    ],
+                }
+            ],
+        }
+        request = RecommendationRequest(query=query, auto_grow=True)
+        with patch.object(TreeGardener, "cultivate", return_value=branch) as cultivate:
+            response = self.engine.search(request)
+
+        cultivate.assert_called_once_with(query)
+        self.assertIn("機動戦士ガンダム", response.results[0].title)
+        self.assertGreaterEqual(response.results[0].score, 0.90)
+        self.assertEqual(response.trace[0].stage, "🌱 [GARDENER AUTO-MOUNT]")
+        self.assertIn("【自己進化後】", response.trace[0].description)
+        indexed_titles = {node.title for node in self.dense_retriever.nodes}
+        self.assertIn("機動戦士ガンダム", indexed_titles)
 
 
 if __name__ == "__main__":

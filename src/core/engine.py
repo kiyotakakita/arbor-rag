@@ -3,12 +3,10 @@ batch forward-pass pruning, dense candidate rescue, and listwise reranking.
 """
 from __future__ import annotations
 
+import logging
 import time
 from typing import Any, Optional
 
-from .decision_model import BaseDecisionModel, MockDecisionModel
-from .dense_retriever import DenseRetriever
-from .tree import TreeIndex, TreeNode
 from ..schemas.recommendation import (
     CandidateResult,
     DecisionTraceStep,
@@ -16,6 +14,12 @@ from ..schemas.recommendation import (
     RecommendationRequest,
     RecommendationResponse,
 )
+from .decision_model import BaseDecisionModel, MockDecisionModel
+from .dense_retriever import DenseRetriever
+from .gardener import TreeGardener
+from .tree import TreeIndex, TreeNode
+
+logger = logging.getLogger(__name__)
 
 
 class DecisionEngine:
@@ -61,9 +65,12 @@ class DecisionEngine:
         """Returns metadata list of all mounted datasets."""
         return self.tree_index.list_datasets()
 
-    def search(self, request: RecommendationRequest) -> RecommendationResponse:
+    def search(
+        self, request: RecommendationRequest, auto_grow: bool | None = None
+    ) -> RecommendationResponse:
         """Executes the complete DecisionRAG hierarchical retrieval & listwise ranking pipeline."""
         start_time = time.perf_counter()
+        should_auto_grow = request.auto_grow if auto_grow is None else auto_grow
         trace: list[DecisionTraceStep] = []
         total_evaluated_count = 0
 
@@ -269,7 +276,7 @@ class DecisionEngine:
 
         elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
 
-        return RecommendationResponse(
+        response = RecommendationResponse(
             query=request.query,
             results=final_results,
             total_candidates_evaluated=total_evaluated_count + len(dense_rescued_items),
@@ -278,3 +285,56 @@ class DecisionEngine:
             execution_time_ms=elapsed_ms,
             trace=trace,
         )
+
+        top_score_before = response.results[0].score if response.results else 0.0
+        if should_auto_grow and top_score_before < 0.50:
+            top_title_before = response.results[0].title if response.results else "該当なし"
+            logger.info("🌱 庭師エージェントが発火: Gemini に問い合わせ中...")
+            branch = TreeGardener().cultivate(request.query)
+            mount_info = self.mount_dataset(branch)
+            leaf_titles = [
+                node.title
+                for node in self.tree_index.get_active_leaves()
+                if node.dataset_id == mount_info["id"]
+            ]
+            mounted_label = f"{mount_info['title']} ➔ {', '.join(leaf_titles[:3])}"
+            logger.info(
+                "✅ 新規ツリー接ぎ木完了: 【%s】 (%d leaf items)",
+                mounted_label,
+                mount_info["leaf_count"],
+            )
+            evolved_response = self.search(request, auto_grow=False)
+            top_score_after = (
+                evolved_response.results[0].score if evolved_response.results else 0.0
+            )
+            top_title_after = (
+                evolved_response.results[0].title
+                if evolved_response.results
+                else "該当なし"
+            )
+            evolved_response.trace.insert(
+                0,
+                DecisionTraceStep(
+                    stage="🌱 [GARDENER AUTO-MOUNT]",
+                    level=1,
+                    description=(
+                        f"Geminiにより「{mounted_label}」のツリーを接ぎ木しました。"
+                        f"【進化前】{top_title_before} (Score: {top_score_before:.3f}) → "
+                        f"【自己進化後】{top_title_after} (Score: {top_score_after:.3f})"
+                    ),
+                    evaluated=[],
+                    survivors_count=mount_info["leaf_count"],
+                    pruned_count=0,
+                ),
+            )
+            evolved_response.execution_time_ms = round(
+                (time.perf_counter() - start_time) * 1000.0, 2
+            )
+            logger.info(
+                "🌱 自己進化後: %s (Score: %.3f)",
+                top_title_after,
+                top_score_after,
+            )
+            return evolved_response
+
+        return response
